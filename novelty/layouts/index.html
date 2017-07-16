@@ -5,11 +5,43 @@
 
     <body>
         <div class="container">
-            <h1>test</h1>
+
+            <!-- info section -->
+            <section id="info">
+                <div class="row">
+                    <div class="eight columns offset-by-two">
+                        <img src="/images/headshot.png" alt="Calvin Smith">
+                        <h1> {{ .Site.Data.personal.name }}</h1>
+                        {{ .Site.Data.personal.title }}<br>
+                        {{ .Site.Data.personal.affiliation }}<br>
+                        {{ .Site.Data.personal.office }}<br>
+                        {{ .Site.Data.personal.email }}
+                    </div>
+                </div>
+            </section>
+
+            <!-- about section -->
+            <section id="about">
+                <div class="row">
+                    <div class="eight columns offset-by-two">
+                        {{ .Site.Data.personal.about }}
+                    </div>
+                </div>
+            </section>
+
+            <!-- miscellaneous section -->
+            <section id="misc">
+                <div class="row">
+                    <div class="eight columns offset-by-two">
+                        My CV is available <a href="/files/cv.pdf">here</a>.
+                    </div>
+                </div>
+            </section>
+
             <!-- publications -->
             <section id="publications">
                 <div class="row">
-                    <div class="six columns offset-by-three">
+                    <div class="eight columns offset-by-two">
                         <h2>Publications</h2>
                         <ul>
                             {{ range (where .Data.Pages "Section" "publication") }}
@@ -23,7 +55,7 @@
             <!-- projects -->
             <section id="projects">
                 <div class="row">
-                    <div class="six columns offset-by-three">
+                    <div class="eight columns offset-by-two">
                         <h2>Projects</h2>
                         <ul>
                             {{ range (where .Data.Pages "Section" "project") }}

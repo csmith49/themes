@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     {{ partial "head.html" . }}
-
     <body>
-        <div class="section">
+        <div class="container">
             <div class="row">
-                <div class="six columns offset-by-three">
+                <div class="eight columns offset-by-two">
+                    <h1>{{ .Params.title }}</h1>
                     {{ .Content }}
                 </div>
             </div>
