@@ -1,0 +1,69 @@
+/*all the relevant stuff is in sections, so let's deal with those styles here*/
+.section {
+    padding: 1em 0 1em;
+    text-align: left;
+    font-weight: lighter;
+}
+.section h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0em;
+}
+.section h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.section h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.section h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.base-of-left {
+    border-bottom-style: solid;
+    border-bottom-color: #adadad;
+    border-bottom-width: thin;
+}
+/*we have to be careful with the headshot, so it's not too big*/
+.headshot {
+    max-width: 270px;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+}
+/*for formatting md files*/
+.md ul {
+    list-style: circle outside none;
+}
+.md ol{
+    list-style: decimal outside none;
+}
+.md li {
+    margin: 0.5em;
+}
+/*and so images aren't really huge*/
+img {
+    max-width: 100%;
+    display: block;
+}
+/*lists don't actually need bullets, we just use them for spacing and whatnot*/
+ul {
+    list-style: none outside none;
+}
+/*formatting for links (papers, code, etc.)*/
+a {
+    font-weight: bold;
+    text-decoration: inherit;
+    color: inherit;
+}
+a:hover {
+    color: #0479a8;
+}
+/*when things are not small, add a border to the bottom of the info*/
+@media (min-width: 700px) {
+    .base-of-left {
+        border-bottom-style: none;
+    }
+}
