@@ -1,18 +1,14 @@
-{{ partial "header.html" . }}
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
 
-<div class="container">
-    <div class="row">
-        <div class="one-half column">
-            <div class="section base-of-left">
-                <h1><a href="{{ .Site.BaseURL }}"><i class="fa fa-chevron-left"></i> Home</a></h1>
+    <body>
+        <div class="section">
+            <div class="row">
+                <div class="six columns offset-by-three">
+                    {{ .Content }}
+                </div>
             </div>
         </div>
-        <div class="one-half column">
-            <div class="section md">
-                {{ .Content }}
-            </div>
-        </div>
-    </div>
-</div>
-
-{{ partial "footer.html" . }}
+    </body>
+</html>
