@@ -1,3 +1,10 @@
+img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+
+
 /*all the relevant stuff is in sections, so let's deal with those styles here*/
 .section {
     padding: 1em 0 1em;
@@ -43,10 +50,14 @@
 .md li {
     margin: 0.5em;
 }
+
+
+
+
 /*and so images aren't really huge*/
 img {
     max-width: 100%;
-    display: block;
+    display: inline-block;
 }
 /*lists don't actually need bullets, we just use them for spacing and whatnot*/
 ul {
