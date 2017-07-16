@@ -1,0 +1,12 @@
+<li>
+    <a href="{{ .url_pdf }}">{{ .title }}</a>, {{ .publication_short }}
+    <br>
+    {{ .authors }}
+    <br>
+    {{ with .url_code }}
+        <a href="{{ . }}"><i class="fa fa-lg fa-github"></i></a>
+    {{ end }}
+    {{ with .url_video}}
+        <a href="{{ . }}"><i class="fa fa-lg fa-youtube-play"></i></a>
+    {{ end }}
+</li>

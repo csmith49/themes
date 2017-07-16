@@ -1,61 +1,43 @@
-{{ partial "header.html" . }}
+<!DOCTYPE html>
+<html>
+    <!-- always the same header - just put it in a partial -->
+    {{ partial "head.html" . }}
 
-<div class="container">
-    <div class="row">
-        <!-- lhs, with picture and conctact info  -->
-        <div class="one-half column">
-            <img src="/images/headshot.png" alt="Calvin Smith" class="headshot">
-            <div class="section name">
-                <h1>{{ .Site.Data.personal.name }}</h1>
-            </div>
-            <div class="section info base-of-left">
-                {{ .Site.Data.personal.title }}<br>
-                {{ .Site.Data.personal.affiliation }}<br>
-                {{ .Site.Data.personal.office }}<br>
-                {{ .Site.Data.personal.email }}
-            </div>
-        </div>
-        <!-- rhs, with details, pubs, projects, etc. -->
-        <div class="one-half column details">
-            <div class="section about">
-                {{ .Site.Data.personal.about }}
-            </div>
-            <div class="section misc">
-                My CV is available <a href="/files/cv.pdf">here</a>.
-            </div>
-            <div class="section publications">
-                <h2>Publications</h2>
-                <ul>
-                    {{ range .Site.Data.publications }}
-                        <li>
-                            <a href="{{ .url_pdf }}">{{ .title }}</a>, {{ .publication_short }}
-                            <br>
-                            {{ .authors }}
-                            <br>
-                            {{ with .url_code }}
-                                <a href="{{ . }}"><i class="fa fa-lg fa-github"></i></a>
-                            {{ end }}
-                            {{ with .url_video}}
-                                <a href="{{ . }}"><i class="fa fa-lg fa-youtube-play"></i></a>
-                            {{ end }}
-                        </li>
-                    {{ end }}
-                </ul>
-            </div>
-            <div class="section projects">
-                <h2>Projects</h2>
-                <ul>
-                    {{ range .Data.Pages }}
-                        {{ if eq .Type "project" }}
-                            <li>
-                                {{ .Params.description }}<a href="{{ .Permalink }}"> Here.</a>
-                            </li>
-                        {{ end }}
-                    {{ end }}
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+    <body>
+        <div class="container">
 
-{{ partial "footer.html" .}}
+            <!-- publications -->
+            <section id="publications">
+                <div class="row">
+                    <div class="six columns offset-by-two">
+                        <h2>Publications</h2>
+                        <ul>
+                            {{ range .Data.Pages }}
+                                {{ if eq .Type "publication"}}
+                                    {{ .Render "li.html" }}
+                                {{ end }}
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- projects -->
+            <section id="projects">
+                <div class="row">
+                    <div class="six columns offset-by-two">
+                        <h2>Projects</h2>
+                        <ul>
+                            {{ range .Data.Pages }}
+                                {{ if eq .Type "project" }}
+                                    {{ .Render "li.html" }}
+                                {{ end }}
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </body>
+</html>
