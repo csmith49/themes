@@ -14,7 +14,7 @@
                         <ul>
                             {{ range .Data.Pages }}
                                 {{ if eq .Type "publication"}}
-                                    {{ .Render "li.html" }}
+                                    {{ .Render "li" }}
                                 {{ end }}
                             {{ end }}
                         </ul>
