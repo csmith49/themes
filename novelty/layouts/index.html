@@ -5,17 +5,15 @@
 
     <body>
         <div class="container">
-
+            <h1>test</h1>
             <!-- publications -->
             <section id="publications">
                 <div class="row">
                     <div class="six columns offset-by-three">
                         <h2>Publications</h2>
                         <ul>
-                            {{ range .Data.Pages }}
-                                {{ if eq .Type "publication"}}
-                                    {{ .Render "li" }}
-                                {{ end }}
+                            {{ range (where .Data.Pages "Section" "publication") }}
+                                {{ .Render "li" }}
                             {{ end }}
                         </ul>
                     </div>
@@ -28,10 +26,8 @@
                     <div class="six columns offset-by-three">
                         <h2>Projects</h2>
                         <ul>
-                            {{ range .Data.Pages }}
-                                {{ if eq .Type "project" }}
-                                    {{ .Render "li.html" }}
-                                {{ end }}
+                            {{ range (where .Data.Pages "Section" "project") }}
+                                {{ .Render "li" }}
                             {{ end }}
                         </ul>
                     </div>
